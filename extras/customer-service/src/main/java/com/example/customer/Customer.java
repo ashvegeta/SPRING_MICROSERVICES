@@ -3,7 +3,7 @@ package com.example.customer;
 public class Customer 
 {
     private final int id;
-    private final String name;
+    private String name;
 
     public Customer(final int id, final String name) 
     {
@@ -17,5 +17,9 @@ public class Customer
 
     public String getName() {
         return name;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
     }
 }
