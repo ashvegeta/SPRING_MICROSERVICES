@@ -44,15 +44,6 @@ public class controller
                      .findFirst()
                      .orElseThrow(IllegalArgumentException::new);
     }
-
-    @GetMapping("/{id}")
-    public Customer getCustomerById(@PathVariable int id) 
-    {
-        return customers.stream()
-                     .filter(customer -> customer.getId() == id)
-                     .findFirst()
-                     .orElseThrow(IllegalArgumentException::new);
-    }
     
     @GetMapping("/update/{id}/{name}")
     public List<Customer> updateCustomerById(@PathVariable int id,@PathVariable String name)
