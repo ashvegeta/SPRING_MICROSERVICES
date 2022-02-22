@@ -28,6 +28,13 @@ public class controller
     {
         return customers;
     }
+    
+    @GetMapping("/create/{id}/{name}")
+    public List<Customer> create(@PathVariable int id,@PathVariable String name)
+    {
+        customers.add(new Customer(id,name));
+        return customers;
+    }
 
      @GetMapping("/{id}")
     public Customer getCustomerById(@PathVariable int id) 
