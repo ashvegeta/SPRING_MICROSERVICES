@@ -46,6 +46,20 @@ public class controller
                      .findFirst()
                      .orElseThrow(IllegalArgumentException::new);
     }
+    
+    @GetMapping("/update/{id}/{name}")
+    public List<Customer> updateCustomerById(@PathVariable int id,@PathVariable String name)
+    {
+       for(int i = customers.size() - 1; i >= 0; --i) 
+        {
+            if(customers.get(i).getId()==id)
+            {
+                    customers.get(i).setName(name);
+            }
+        }
+
+        return customers;
+    }
 
     @GetMapping("/delete/{id}")
     public List<Customer> deleteCustomerById(@PathVariable int id)
